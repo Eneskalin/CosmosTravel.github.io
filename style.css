@@ -1,0 +1,489 @@
+body, html {
+  scroll-behavior: smooth; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #0d0d2b, #000000);
+  color: white;
+}
+
+.particles, .star-background {
+  pointer-events: none; /* This ensures they don't intercept clicks */
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffa200;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:  #ffa200;
+}
+
+.navbar {
+  position: fixed;
+  top: 40px; /* Added more margin-top */
+  left: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+  transition: background 0.3s, color 0.1s, top 0.3s, left 0.3s, right 0.3s, padding 0.3s, margin 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+}
+
+
+.navbar.sticky {
+  background: #0C0C27;
+  color:  #ffa200;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* White shadow */
+}
+
+.navbar a {
+  color: inherit; /* Use inherit to ensure color change on scroll */
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.container {
+  height: 100vh;
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Ensure content is above particles */
+}
+
+.container1{
+  height: 100vh;
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.container:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.253);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+
+
+.particles {
+  position: fixed; /* Changed to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Ensure particles are below content */
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 5px 1px white;
+  animation: float 10s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(calc(-50vw + 100%));
+    opacity: 0;
+  }
+}
+
+/* Small stars background */
+.star-background {
+  position: fixed; /* Changed to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0; /* Ensure star background is below everything */
+}
+
+.star {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  opacity: 0.8;
+}
+
+.selected{
+  fill: #ffa200;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+/* Additional section styling */
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.feature-item {
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.logos img {
+  max-width: 100px;
+  margin: 20px;
+}
+
+.slider {
+  width: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+
+}
+
+@media only screen and (max-width: 768px) {
+.slider{
+  max-width: 80%;
+  padding: 10px;
+  max-height: 80% ;
+}
+}
+
+@media only screen and (max-width: 400px) {
+.slider{
+  max-width: 90%;
+  padding: 5px;
+  align-items: center;
+}
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3%;
+}
+
+.map-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3%;
+}
+svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease
+
+}
+
+@media (max-width: 768px) {
+  /* Mobil cihazlarda zoomu devre dışı bırakmak için viewBox değişikliğini engelle */
+  svg:hover {
+    transform: none;}
+  }
+
+svg path {
+  fill: rgba(0, 0, 0, 0.253);
+  opacity: 70%;
+  
+  stroke: rgb(181, 181, 181);
+  stroke-width: .25px;
+}
+
+svg path:hover {
+  fill: #909090;
+  stroke: white;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+/* style.css */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  
+  .nav-links a {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+.container > h1{
+  font-size:large;
+}
+
+
+.box {
+  width: 140px;
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px cyan(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: white;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color: white;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+#generate {
+  color: white;
+  text-decoration: none;
+  
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+#capture{
+
+ width:900px;
+ height: 500px; 
+}
+@use postcss-preset-env {
+  stage: 0;
+}
+:root {
+  --color-background: #000119;
+  --stroke-width: calc(1em / 16);
+  --font-size: 10vmin;
+  --font-weight: 700;
+  --letter-spacing: calc(1em / 8);
+}
+
+h1 {
+  background-clip: text;
+  background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  color: var(--color-background);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  padding: calc(--stroke-width / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--stroke-width);
+}
+
+#map2{
+  position: absolute;
+  top: 2%;
+  left: 3%;
+}
+
+#logo{
+  width: 7%;
+  position: absolute;
+  left: 5%;
+  top: 4%;
+  
+}
+#astrount{
+  width: 35%;
+  position: absolute;
+  right: 1%;
+  top: 40%;
+}
+
+
+footer{
+  background: #0C0C27;
+  color:  #ffa200;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; 
+}
+
+.footer-content {
+  display: inline-block;
+  margin: 0 5px;
+}
+footer >p{
+  font-size:medium;
+}
