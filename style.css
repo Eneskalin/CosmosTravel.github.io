@@ -165,10 +165,11 @@ p {
   opacity: 0.8;
 }
 
+
 .selected{
   fill: #ffa200;
   stroke: #fff;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 
 /* Additional section styling */
