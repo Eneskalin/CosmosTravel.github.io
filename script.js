@@ -131,25 +131,45 @@ function captureDiv() {
   });
 }
 
-document.getElementById('lang').addEventListener('click', function() {
+document.getElementById('lang').addEventListener('click', function () {
   if (this.src === 'https://hatscripts.github.io/circle-flags/flags/tr.svg') {
-      this.src = 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
-      title.textContent = 'My Erasmus Travel Map';
-      generateBtn.textContent ="Generate";
-      imgTitle.textContent = "My Travel Map";
-      downloadBtn.textContent = "Download";
-      copyright.textContent = "All Rights Reserved © 2024"
+    this.src = 'https://hatscripts.github.io/circle-flags/flags/gb.svg';
+    title.textContent = 'My Erasmus+ Travel Map';
+    generateBtn.textContent = "Generate";
+    imgTitle.textContent = "My Travel Map";
+    downloadBtn.textContent = "Download";
+    copyright.textContent = "All Rights Reserved © 2024"
 
 
   } else {
-      this.src = 'https://hatscripts.github.io/circle-flags/flags/tr.svg';
-      title.textContent = 'Erasmus Seyahat Haritam';
-      generateBtn.textContent ="Oluştur";
-      imgTitle.textContent = "Seyahat Haritam";
-      downloadBtn.textContent = "İndir";
-      copyright.textContent = "Tüm Hakları Saklıdır © 2024"
+    this.src = 'https://hatscripts.github.io/circle-flags/flags/tr.svg';
+    title.textContent = 'Erasmus+ Seyahat Haritam';
+    generateBtn.textContent = "Oluştur";
+    imgTitle.textContent = "Seyahat Haritam";
+    downloadBtn.textContent = "İndir";
+    copyright.textContent = "Tüm Hakları Saklıdır © 2024"
 
 
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const svg = document.getElementById('map');
+  const tooltip = document.createElement('div');
+  tooltip.classList.add('tooltip');
+  document.body.appendChild(tooltip);
+
+  svg.addEventListener('mousemove', function (e) {
+      const target = e.target.closest('path[name]');
+      if (target) {
+          const name = target.getAttribute('name');
+          tooltip.textContent = name;
+          tooltip.style.left = e.pageX + 10 + 'px';
+          tooltip.style.top = e.pageY + 10 + 'px';
+          tooltip.classList.add('show');
+      } else {
+          tooltip.classList.remove('show');
+      }
+  });
 });
 
