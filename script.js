@@ -82,18 +82,18 @@ container.addEventListener('mousemove', (e) => {
   }
 });
 
+let selectedNames = [];
 document.querySelectorAll('#map path').forEach(function (path) {
   path.addEventListener('click', function () {
     path.classList.toggle('selected');
 
-    // Update the selectedIds array
+    selectedNames=[];
     selectedIds = [];
     document.querySelectorAll('#map path.selected').forEach(function (selectedPath) {
       selectedIds.push(selectedPath.id);
+      selectedNames.push(selectedPath.getAttribute('name'))
     });
 
-    // Log the array to the console
-    console.log(selectedIds);
   });
 });
 
@@ -101,24 +101,41 @@ document.querySelectorAll('#map path').forEach(function (path) {
 const generateButton = document.getElementById('generate');
 generateButton.addEventListener('click', () => {
   const map2 = document.getElementById('map2');
+  const countryList = document.getElementById('selected-countries');
 
-  // İlk olarak, ikinci haritayı temizleyelim
-  map2.querySelectorAll('path').forEach((path) => {
-    path.classList.remove('selected'); // Tüm seçimleri kaldır
+  // Display selected country names in the list
+  countryList.innerHTML = ` `;
+
+  selectedNames.forEach((countryName) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = countryName;
+    countryList.appendChild(listItem);
   });
 
-  // Ardından, selectedIds dizisindeki ülke ID'lerine göre ikinci haritayı güncelle
+  
+
+
+  // Reset all selections in the second map
+  map2.querySelectorAll('path').forEach((path) => {
+    path.classList.remove('selected');
+  });
+
+  // Apply selection to the second map based on selected IDs
   selectedIds.forEach((id) => {
     const country = map2.getElementById(id);
     if (country) {
-      country.classList.add('selected'); // Seçilen ülkeleri doldur
+      country.classList.add('selected');
     }
   });
-  document.querySelector('.slider').scrollIntoView({
-    behavior: 'smooth'
-  });
 
+  // Smooth scroll to the slider section
+  document.querySelector('.slider').scrollIntoView({
+    behavior: 'smooth',
+  });
 });
+
+
+
 
 
 

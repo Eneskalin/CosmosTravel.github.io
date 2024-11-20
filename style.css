@@ -10,6 +10,17 @@ body, html {
   color: white;
 }
 
+#line{
+  width: 500px;
+  height: 2px;
+  background-color: orangered;
+  position: absolute;
+  top: 58%;
+  right: 0.5%;
+  z-index: 0;
+
+}
+
 .particles, .star-background {
   pointer-events: none; /* This ensures they don't intercept clicks */
 }
@@ -120,6 +131,7 @@ p {
   overflow: hidden;
   z-index: 1; /* Ensure particles are below content */
 }
+
 
 .particle {
   position: absolute;
@@ -438,8 +450,8 @@ body {
 }
 #capture{
 
- width:900px;
- height: 500px; 
+ width:300px;
+ height: 533px; 
 }
 @use postcss-preset-env {
   stage: 0;
@@ -466,22 +478,23 @@ h1 {
 
 #map2{
   position: absolute;
-  top: 2%;
-  left: 3%;
+  bottom: 15%;
+  left: 20%;
 }
 
 #logo{
-  width: 7%;
+  width: 8%;
   position: absolute;
   left: 5%;
-  top: 4%;
+  top: 10%;
   
 }
 #astrount{
   width: 35%;
   position: absolute;
-  right: 1%;
+  right: 55%;
   top: 40%;
+  z-index: 1;
 }
 
 
@@ -504,3 +517,38 @@ footer{
 footer >p{
   font-size:medium;
 }
+
+#selected-countries{
+  color: #ffa200;
+  font-size:10px;
+  position: absolute;
+  top: 60%;
+  margin-right: 20%;
+  align-items: center;
+  list-style-type: none;
+}
+
+
+
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 columns */
+  gap: 10px; 
+  margin: 10px 0;
+  padding: 1;
+  margin-right: 100%;
+
+}
+
+
+.country-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 2px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
