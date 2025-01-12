@@ -15,7 +15,7 @@ body, html {
   height: 2px;
   background-color: orangered;
   position: absolute;
-  top: 58%;
+  top: 50%;
   right: 0.5%;
   z-index: 0;
 
@@ -213,8 +213,8 @@ p {
 
 .slider {
   width: 100%;
-  max-width: 800px;
-  max-height: 500px;
+  max-width: 1080px;
+  max-height: 1920px;
   overflow: hidden;
   position: relative;
   margin: 20px auto;
@@ -222,13 +222,13 @@ p {
 
 }
 
-@media only screen and (max-width: 768px) {
-.slider{
-  max-width: 80%;
-  padding: 10px;
-  max-height: 80% ;
+@media (max-width: 768px) {
+  .slider#capture {
+    width: 320px;
+    height: 568px; /* Mobil cihazlarda daha küçük boyutlar */
+  }
 }
-}
+
 
 @media only screen and (max-width: 400px) {
 .slider{
@@ -438,21 +438,34 @@ body {
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
 }
+@media (max-width: 768px) {
+  .slider#capture {
+    width: 320px;
+    height: 568px; /* Mobil cihazlarda daha küçük boyutlar */
+  }
+}
+
+
 
 #generate {
   color: white;
   text-decoration: none;
-  
   cursor: pointer;
   outline: none;
   border: none;
   background: transparent;
 }
-#capture{
+.slider#capture {
+  width: 400px;
+  height: 712px;
+  margin: 0 auto; /* Ortalamak için */
+  
+  overflow: hidden; /* Taşmaları engellemek için */
 
- width:300px;
- height: 533px; 
 }
+
+
+
 @use postcss-preset-env {
   stage: 0;
 }
@@ -476,26 +489,32 @@ h1 {
   -webkit-text-stroke-width: var(--stroke-width);
 }
 
-#map2{
-  position: absolute;
-  bottom: 15%;
-  left: 20%;
+#map2 {
+  width: 120%;
+  height: 120%;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+
 }
 
-#logo{
+@media (max-width: 768px) {
+  #capture {
+    width: 90%;
+    height: auto; /* Yüksekliği otomatik ayarlamak için */
+  }
+}
+
+
+#logo {
   width: 8%;
   position: absolute;
   left: 5%;
   top: 10%;
-  
 }
-#astrount{
-  width: 35%;
-  position: absolute;
-  right: 55%;
-  top: 40%;
-  z-index: 1;
-}
+
 
 
 footer{
@@ -522,8 +541,9 @@ footer >p{
   color: #ffa200;
   font-size:10px;
   position: absolute;
-  top: 60%;
+  top: 15%;
   margin-right: 20%;
+  text-align: center;
   align-items: center;
   list-style-type: none;
 }

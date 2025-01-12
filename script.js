@@ -141,12 +141,24 @@ generateButton.addEventListener('click', () => {
 
 function captureDiv() {
   var element = document.getElementById('capture');
-  html2canvas(element).then(function (canvas) {
+
+
+  // Sabit genişlik ve yükseklik ayarı
+  const options = {
+    width: 400, // Sabit genişlik
+    height: 712, // Sabit yükseklik
+    windowWidth: 400, // Görünüm için genişlik
+    windowHeight: 712, // Görünüm için yükseklik
+    scale: 3, // Yüksek çözünürlük için ölçek
+  };
+
+  html2canvas(element, options).then(function (canvas) {
     canvas.toBlob(function (blob) {
-      saveAs(blob, 'screenshot.png');
+      saveAs(blob, 'sabit-boyut.png'); // Sabit ebatta indirilen dosya adı
     });
   });
 }
+
 
 document.getElementById('lang').addEventListener('click', function () {
   if (this.src === 'https://hatscripts.github.io/circle-flags/flags/tr.svg') {
