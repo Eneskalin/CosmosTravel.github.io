@@ -200,5 +200,18 @@ document.addEventListener('DOMContentLoaded', function () {
           tooltip.classList.remove('show');
       }
   });
+
+  var saveBtn = document.getElementById('save-favorite');
+  if (saveBtn) {
+    saveBtn.onclick = function() {
+      var country = document.getElementById('fav-country').value;
+      var city = document.getElementById('fav-city').value;
+      if (country && city) {
+        document.getElementById('favorite-country').textContent = 'Favori Ülke: ' + country;
+        document.getElementById('favorite-city').textContent = ' | Favori Şehir: ' + city;
+        document.getElementById('favorite-box').style.display = 'block';
+      }
+    };
+  }
 });
 

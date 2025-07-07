@@ -300,10 +300,10 @@ svg {
   }
 
 svg path {
-  fill: rgba(0, 0, 0, 0.253);
+  /* fill: rgba(0, 0, 0, 0.253); */
   opacity: 70%;
   
-  stroke: rgb(181, 181, 181);
+  /* stroke: rgb(181, 181, 181); */
   stroke-width: .25px;
 }
 
@@ -537,38 +537,186 @@ footer >p{
   font-size:medium;
 }
 
-#selected-countries{
+#selected-countries {
   color: #ffa200;
-  font-size:10px;
+  font-size: 1.2vw;
   position: absolute;
   top: 15%;
-  margin-right: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   align-items: center;
   list-style-type: none;
-}
-
-
-
-.country-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 4 columns */
-  gap: 10px; 
-  margin: 10px 0;
-  padding: 1;
-  margin-right: 100%;
-
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7vw;
+  margin: 0;
+  max-width: 60vw;
 }
-
 
 .country-item {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 18px;
   text-align: center;
-  font-size: 2px;
+  font-size: 2vw;
   color: #333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Instagram Story boyutunda responsive ana kapsayıcı */
+.story-container {
+  position: relative;
+  width: 100vw;
+  max-width: 1080px;
+  aspect-ratio: 9/16;
+  height: 100vh;
+  max-height: 1920px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2vw 2vw 1vw 2vw;
+  box-sizing: border-box;
+}
+
+.story-container h1 {
+  font-size: 2.2vw;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+
+.map-holder {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3;
+  border-radius: 1vw;
+  margin-bottom: 2vw;
+  min-height: 40vh;
+  max-height: 70vh;
+}
+
+.map-placeholder {
+  color: #888;
+  font-size: 2vw;
+  text-align: center;
+}
+
+#download-btn {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 0.8vw;
+  padding: 1vw 3vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  margin-bottom: 1vw;
+  transition: background 0.2s;
+}
+#download-btn:hover {
+  background: #005bb5;
+}
+
+.info {
+  font-size: 1.2vw;
+  color: #444;
+  text-align: center;
+  margin-top: 0.5vw;
+}
+
+@media (max-width: 600px) {
+  .story-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    padding: 4vw 2vw 2vw 2vw;
+  }
+  .story-container h1 {
+    font-size: 5vw;
+  }
+  .map-placeholder {
+    font-size: 4vw;
+  }
+  #download-btn {
+    font-size: 3vw;
+    padding: 2vw 6vw;
+  }
+  .info {
+    font-size: 2.5vw;
+  }
+  #selected-countries {
+    font-size: 4vw;
+    max-width: 95vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .country-item {
+    font-size: 4vw;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.favorite-form {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7vw;
+}
+.favorite-form label {
+  font-size: 1.1vw;
+  color: #333;
+  margin-bottom: 0.2vw;
+}
+.favorite-form select, .favorite-form input {
+  font-size: 1.1vw;
+  padding: 0.5vw 1vw;
+  border-radius: 0.5vw;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5vw;
+  width: 16vw;
+  max-width: 90vw;
+}
+.favorite-form button {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5vw;
+  padding: 0.7vw 2vw;
+  font-size: 1.1vw;
+  cursor: pointer;
+  margin-top: 0.5vw;
+  transition: background 0.2s;
+}
+.favorite-form button:hover {
+  background: #005bb5;
+}
+.favorite-box {
+  margin-top: 1vw;
+  font-size: 1.5vw;
+  color: #007aff;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .favorite-form label, .favorite-form select, .favorite-form input, .favorite-form button, .favorite-box {
+    font-size: 3vw;
+    width: 80vw;
+    max-width: 95vw;
+  }
+  .favorite-box {
+    font-size: 4vw;
+  }
 }
 
