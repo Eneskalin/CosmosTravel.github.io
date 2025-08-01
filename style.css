@@ -544,17 +544,27 @@ footer >p{
   font-size: 1.2vw;
   position: absolute;
   top: 15%;
-  left: 50%;
+  left: 50%; 
   transform: translateX(-50%);
-  text-align: center;
-  align-items: center;
-  list-style-type: none;
+  
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 1.7vw;
-  margin: 0;
-  max-width: 60vw;
+  max-width: 80vw; 
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  text-align: center;
+  
 }
+
+#selected-countries li {
+  text-align: center;
+  max-width: 100%;
+
+}
+
 
 .country-item {
   background-color: #f0f0f0;
@@ -636,6 +646,10 @@ footer >p{
   margin-top: 0.5vw;
 }
 
+.textarea{
+  max-width: 10%;
+}
+
 @media (max-width: 600px) {
   .story-container {
     width: 100vw;
@@ -659,68 +673,16 @@ footer >p{
   }
   #selected-countries {
     font-size: 4vw;
-    max-width: 95vw;
+   max-width:150%;
     grid-template-columns: repeat(3, 1fr);
-      gap: 1.7vw;
+      gap: 4.7vw;
 
   }
+
   .country-item {
     font-size: 4vw;
     width: 100%;
     min-width: 0;
-  }
-}
-
-.favorite-form {
-  margin-top: 2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7vw;
-}
-.favorite-form label {
-  font-size: 1.1vw;
-  color: #333;
-  margin-bottom: 0.2vw;
-}
-.favorite-form select, .favorite-form input {
-  font-size: 1.1vw;
-  padding: 0.5vw 1vw;
-  border-radius: 0.5vw;
-  border: 1px solid #ccc;
-  margin-bottom: 0.5vw;
-  width: 16vw;
-  max-width: 90vw;
-}
-.favorite-form button {
-  background: #007aff;
-  color: #fff;
-  border: none;
-  border-radius: 0.5vw;
-  padding: 0.7vw 2vw;
-  font-size: 1.1vw;
-  cursor: pointer;
-  margin-top: 0.5vw;
-  transition: background 0.2s;
-}
-.favorite-form button:hover {
-  background: #005bb5;
-}
-.favorite-box {
-  margin-top: 1vw;
-  font-size: 1.5vw;
-  color: #007aff;
-  font-weight: bold;
-  text-align: center;
-}
-@media (max-width: 600px) {
-  .favorite-form label, .favorite-form select, .favorite-form input, .favorite-form button, .favorite-box {
-    font-size: 3vw;
-    width: 80vw;
-    max-width: 95vw;
-  }
-  .favorite-box {
-    font-size: 4vw;
   }
 }
 

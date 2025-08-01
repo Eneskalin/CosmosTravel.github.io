@@ -140,21 +140,17 @@ generateButton.addEventListener('click', () => {
 
 
 function captureDiv() {
-  var element = document.getElementById('capture');
+  const element = document.getElementById('capture');
 
-
-  // Sabit genişlik ve yükseklik ayarı
-  const options = {
-    width: 400, // Sabit genişlik
-    height: 712, // Sabit yükseklik
-    windowWidth: 400, // Görünüm için genişlik
-    windowHeight: 712, // Görünüm için yükseklik
-    scale: 3, // Yüksek çözünürlük için ölçek
-  };
-
-  html2canvas(element, options).then(function (canvas) {
+  html2canvas(element, {
+    backgroundColor: null,  // Arka plan şeffaf olsun istiyorsan
+    useCORS: true,          // Farklı domain görselleri için
+    scale: 2,               // Daha yüksek çözünürlük
+    windowWidth: element.scrollWidth,  // Tüm alanı kapsa
+    windowHeight: element.scrollHeight
+  }).then(function (canvas) {
     canvas.toBlob(function (blob) {
-      saveAs(blob, 'sabit-boyut.png'); // Sabit ebatta indirilen dosya adı
+      saveAs(blob, 'mymap.png');
     });
   });
 }
