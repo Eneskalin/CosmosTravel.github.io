@@ -359,6 +359,8 @@ body {
     top: 60px;
     left: 0;
   }
+
+  
   
   .nav-links a {
     margin: 10px 0;
@@ -549,7 +551,7 @@ footer >p{
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4.7vw;
+  gap: 1.7vw;
   margin: 0;
   max-width: 60vw;
 }
@@ -659,6 +661,8 @@ footer >p{
     font-size: 4vw;
     max-width: 95vw;
     grid-template-columns: repeat(3, 1fr);
+      gap: 1.7vw;
+
   }
   .country-item {
     font-size: 4vw;
