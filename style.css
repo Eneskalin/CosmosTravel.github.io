@@ -549,7 +549,7 @@ footer >p{
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.7vw;
+  gap: 4.7vw;
   margin: 0;
   max-width: 60vw;
 }
@@ -658,7 +658,7 @@ footer >p{
   #selected-countries {
     font-size: 4vw;
     max-width: 95vw;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .country-item {
     font-size: 4vw;
